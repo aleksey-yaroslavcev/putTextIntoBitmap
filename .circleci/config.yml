@@ -1,0 +1,8 @@
+jobs:
+  build:
+    docker:
+      - image: alekseyyaroslavcev/qt5-mingw32-dw2
+    resource_class: small
+    steps:
+      - run: /opt/mxe/usr/bin/qmake
+      - run: make

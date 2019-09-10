@@ -5,6 +5,8 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - run: export PATH=/opt/mxe/usr/bin:$PATH
-      - run: qmake putTextIntoBitmap.pro
-      - run: make
+      - run: 
+          command: |
+            export PATH=/opt/mxe/usr/bin:$PATH
+            qmake putTextIntoBitmap.pro
+            make

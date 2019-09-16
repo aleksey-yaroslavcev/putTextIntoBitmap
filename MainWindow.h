@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMap>
+#include <QStandardItemModel>
 
 namespace Ui {
 class MainWindow;
@@ -35,11 +36,13 @@ private slots:
 
 private:
     void updatePreview();
+    QImage getImage(const QString& title);
 
     Ui::MainWindow* ui;
     QString _fileName;
     QString _dstDirectory;
     QMap<int, QColor> _colorMap;
+    QStandardItemModel _batchJobModel;
 };
 
 #endif // MAINWINDOW_H

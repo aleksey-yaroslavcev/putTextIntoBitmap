@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMap>
 
 namespace Ui {
 class MainWindow;
@@ -18,11 +19,27 @@ public:
 private slots:
     void on_butOpen_clicked();
 
-    void on_butSaveAs_clicked();
+    void on_spinFontSize_valueChanged(int arg1);
+
+    void on_cobTextColor_currentIndexChanged(int index);
+
+    void on_chbIsBold_stateChanged(int arg1);
+
+    void on_butSelectDirectory_clicked();
+
+    void on_butProcess_clicked();
+
+    void on_butPlus_clicked();
+
+    void on_butMinus_clicked();
 
 private:
+    void updatePreview();
+
     Ui::MainWindow* ui;
     QString _fileName;
+    QString _dstDirectory;
+    QMap<int, QColor> _colorMap;
 };
 
 #endif // MAINWINDOW_H
